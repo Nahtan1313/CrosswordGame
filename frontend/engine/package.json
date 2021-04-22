@@ -1,0 +1,20 @@
+{
+  "name": "crosswordgame",
+  "version": "1.0.0",
+  "description": "Crossword Website",
+  "main": "Crossword.js",
+  "type": "module",
+  "scripts": {
+    "console": "node console_tester.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nahtan1313/CrosswordGame.git"
+  },
+  "author": "Nathan Mullaney",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nahtan1313/CrosswordGame/issues"
+  },
+  "homepage": "https://github.com/Nahtan1313/CrosswordGame#readme"
+}
