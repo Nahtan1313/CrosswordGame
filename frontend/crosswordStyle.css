@@ -1,0 +1,213 @@
+#board{
+    float: left;
+    margin-left: 5%;
+    color: black;
+}
+
+#root, .navigation_bar{
+    opacity: 0.3;
+    pointer-events:none;
+}
+
+#across_clues, #down_clues{
+    float:left;
+    overflow-y:scroll;
+    height: 630px;
+    display:block;
+    border: none;
+    color: black;
+    margin-left: 50px;
+    width: 23%;
+}
+
+
+
+.black{
+    background: black;
+}
+
+.text{
+    background: white;
+    text-align: center;
+}
+
+textarea{
+    width: 84%;
+    height: 84%;
+    border: none;
+    resize: none;
+    font-size: 25px;
+    line-height: 25px;
+    text-align: center;
+    margin-top: 3px;
+    position: relative;
+    z-index: 1;
+    text-transform: uppercase;
+}
+
+textarea:focus{
+    outline: none;
+    background-color: rgb(248, 248, 70)
+}
+
+textarea[placeholder]
+{
+    text-align: center;
+}
+
+
+.text, .black{
+    border: solid black;
+    width: 35px;
+    border-width: 0.5px;
+    height: 35px;
+    padding: 0 0 0 0;
+}
+
+html{
+    background-color: white;
+    color: white;
+}
+
+.superscript{
+    text-align:left;
+    vertical-align:top;
+    font-size: xx-small;
+    position: absolute;
+    z-index: 10;
+    transform: translate(2px, -38px);
+}
+
+.navigation_bar{
+    overflow: hidden;
+    background-color: rgb(116, 116, 116);
+    font-family: Arial;
+}
+
+.drop_down{
+    float: left;
+    overflow: hidden;
+}
+
+.drop_down .drop_button{
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: lightblue;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+
+.navigation_bar .drop_down:hover .drop_button{
+    background-color: black
+}
+
+.dropdown_content {
+    display: none;
+    position: absolute;
+    background-color: black;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 20;
+}
+
+.dropdown_content button {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    min-width: 160px;
+  }
+
+
+#check_button_div:hover #check_content{
+    display: block;
+  }
+
+#reveal_button_div:hover #reveal_content{
+    display: block;
+}
+
+.incorrect{
+    color: red;
+}
+
+.currentWord{
+    outline: none;
+    background-color: rgb(150, 227, 250)
+}
+
+.numberCell{
+    text-align: right;
+    font-weight: bolder;
+    padding-right: 2%;
+}
+
+#down_header
+{
+    text-align: left;
+    border-bottom: solid;
+    border-width: thin;
+    padding-bottom: 3%;
+}
+#across_header
+{
+    text-align: left;
+    border-bottom: solid;
+    border-width: thin;
+    padding-bottom: 3%;
+}
+
+.currentClue{
+    background-color:  rgb(150, 227, 250);
+}
+
+.clear, .pause, #clock{
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: lightblue;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+
+.navigation_bar .clear:hover {
+    background-color: black
+}
+
+#display_clue{
+    color: black;
+    margin-left: 7%;
+    font-weight: normal;
+    white-space: pre-wrap;
+}
+
+.screen_freeze{
+    position: absolute;
+    width: 300px;
+    margin: 15% 25% 33% 37%;
+    padding: 10px;
+    text-align: center;
+    color: rgb(243, 83, 83);
+    background-color: rgb(214, 214, 214);
+    z-index: 20;
+}
+#start_screen{
+    display: block;
+}
+
+#pause_screen, #end_screen{
+    display: none;
+}
+
+
+
+
+
+

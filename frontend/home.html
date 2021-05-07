@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>  
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <!--Import Firebase libraries-->
+         <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-app.js"></script>
+         <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-auth.js"></script>
+         <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-database.js"></script>
+         <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-storage.js"></script>
+         <script src = "https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+         <script src="https://kit.fontawesome.com/642a732e67.js" crossorigin="anonymous"></script>
+         <link rel="stylesheet" href="login_and_home.css" type="text/css">
+         <script>
+            // Initialize Firebase
+            const firebaseConfig = {
+            apiKey: "AIzaSyDYmz46x6-qXPAoK9iBMdyYQQXUJYpgTQ0",
+            authDomain: "daily-crossword-ec7e4.firebaseapp.com",
+            databaseURL: "https://daily-crossword-ec7e4-default-rtdb.firebaseio.com",
+            projectId: "daily-crossword-ec7e4",
+            storageBucket: "daily-crossword-ec7e4.appspot.com",
+            messagingSenderId: "509234491342",
+            appId: "1:509234491342:web:5c9591b2798dbda5dc459f",
+            measurementId: "G-P4Q7XJ3W1Z"
+        };
+        firebase.initializeApp(firebaseConfig);
+        </script>
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+         <script src = "addAPIs.js"></script>
+        <title>Nathan's Crossword Site Home</title>
+    </head>
+    <body id = "home">
+        <h1>Hello</h1>
+        <form id = "home_naviagation">
+            <button formaction="decades_select.html" class="home_btn" id="browse">Find a Game</button>
+            <button formaction="game.html" class="home_btn" id="random">Random</button>
+            <button formaction="savedGames.html" class="home_btn" id="my_games">Continue</button>
+        </form>
+        <table class = "newsFeed">
+            <tr>
+                <th>Trending Stories</th>
+            </tr>
+        </table>
+        <div class = "forecast">
+            <h2>Today's Weather</h2>
+        </div>
+    </body>
+</html>

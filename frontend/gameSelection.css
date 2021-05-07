@@ -1,0 +1,113 @@
+#years_div{
+    display: block;
+}
+#month_div{
+    display: none;
+}
+#days_div{
+    display: none;
+}
+
+.day_reference{
+    margin: 20px;
+    border: black;
+}
+
+#years_div {
+    width: 100%;
+    overflow-y: auto;
+    margin: auto;
+    text-align: center;
+}
+
+#years_div > .aughts,.nineties,.eighties {
+    width: 250px;
+    height: 250px;
+    float: left;
+    background: lightgray;   
+    margin-left: 14px;
+    margin-right: 20px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+#years_div > .seventies {
+    width: 220px;
+    height: 250px;
+    float: left;
+    background: lightgray;   
+    margin-left: 60px;
+    margin-right: 55px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+#years_div > .tens {
+    width: 220px;
+    height: 250px;
+    float: left;
+    background: lightgray;   
+    margin-left: 60px;
+    margin-right: 55px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+
+
+#years_div > button{
+    display: none;
+}
+body{
+    min-height: 100%;
+}
+
+#decade_button_form {
+    margin: 0;
+    background-color: coral;
+    height: 770px;
+}
+#decade_button_form button {
+    border: 1px solid black; 
+    width: 20%;
+    height: 100%;
+    cursor: pointer; 
+    float: left; 
+    text-align: center;
+    background-position: top;
+    font-size: xx-large;
+    font-style: italic;
+    font-weight: bolder;
+  }
+  
+  #decade_button_form button:not(:last-child) {
+    border-right: none; 
+  }
+  
+  #decade_button_form:after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+
+  #seventies_decade_button{
+      background-image: url(./images/seventies_image.jpeg);
+      color: white;
+  }
+  #eighties_decade_button{
+    background-image: url(./images/eighties_image.jpeg);
+    color: black;
+}
+#nineties_decade_button{
+    background-image: url(./images/nineties_image.jpeg);
+    color: white;
+}
+#aughts_decade_button{
+    background-image: url(./images/aughts_image.jpeg);
+    color: white;
+}
+#tens_decade_button{
+    background-image: url(./images/tens_image.jpeg);
+    color: black;
+}

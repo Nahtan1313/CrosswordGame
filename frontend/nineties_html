@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>  
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <!--Import Firebase libraries-->
+         <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-app.js"></script>
+         <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-auth.js"></script>
+         <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-database.js"></script>
+         <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-storage.js"></script>
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <title>The Nineties</title>
+    </head>
+    <body>
+        <div id="90s_years">
+            <button class = "90s_year" id = "1990_button">1990<button>
+            <button class = "90s_year" id = "1991_button">1991<button>
+            <button class = "90s_year" id = "1992_button">1992<button>
+            <button class = "90s_year" id = "1993_button">1993<button>
+            <button class = "90s_year" id = "1994_button">1994<button>
+            <button class = "90s_year" id = "1995_button">1995<button>
+            <button class = "90s_year" id = "1996_button">1996<button>
+            <button class = "90s_year" id = "1997_button">1997<button>
+            <button class = "90s_year" id = "1998_button">1998<button>
+            <button class = "90s_year" id = "1999_button">1999<button>
+        </div>
+    </body>
+</html>

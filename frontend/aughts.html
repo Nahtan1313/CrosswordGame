@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>  
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <!--Import Firebase libraries-->
+         <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-app.js"></script>
+         <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-auth.js"></script>
+         <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-database.js"></script>
+         <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-storage.js"></script>
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+         <link rel="stylesheet" href="gameSelection.css" type="text/css">
+        <title>The New Millenium</title>
+    </head>
+    <body>
+        <div id="years_div">
+            <button class = "aughts year" id = "2000_button">2000<button>
+            <button class = "aughts year" id = "2001_button">2001<button>
+            <button class = "aughts year" id = "2002_button">2002<button>
+            <button class = "aughts year" id = "2003_button">2003<button>
+            <button class = "aughts year" id = "2004_button">2004<button>
+            <button class = "aughts year" id = "2005_button">2005<button>
+            <button class = "aughts year" id = "2006_button">2006<button>
+            <button class = "aughts year" id = "2007_button">2007<button>
+            <button class = "aughts year" id = "2008_button">2008<button>
+            <button class = "aughts year" id = "2009_button">2009<button>
+        </div>
+        <div id="months_div"></div>
+        <div id="days_div" class = "row">
+            <div id = "sunday" class="column">
+                <h2>Sunday</h2>
+            </div>
+            <div id = "monday" class="column">
+                <h2>Monday</h2>
+            </div>
+            <div id = "tuesday" class="column">
+                <h2>Tuesday</h2>
+            </div>
+            <div id = "wednesday" class="column">
+                <h2>Wednesday</h2>
+            </div>
+            <div id = "thursday" class="column">
+                <h2>Thursday</h2>
+            </div>
+            <div id = "friday" class="column">
+                <h2>Friday</h2>
+            </div>
+            <div id = "saturday" class="column">
+                <h2>Saturday</h2>
+            </div>
+        </div>
+        <script src="./dateSearch.js"></script>
+    </body>
+</html>

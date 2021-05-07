@@ -1,0 +1,70 @@
+#home{
+}
+
+
+#login{
+    background: url(./images/crossword_background.png) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 90%;
+}
+
+#firebaseui-auth-container{
+    transform: translateY(332px);
+}
+
+
+.firebaseui-idp-button{
+    height: 70px;
+    margin: 8px;
+    width: 400px;
+}
+
+.intro_text{
+    transform: translate(490px, 200px);
+    font-size: 70px;
+    color: rgb(131, 95, 165);
+    position: fixed;
+}
+
+#finishedGames{
+    display: none;
+}
+
+.newsFeed{
+    background-color: lightgray;
+    color: white;
+    opacity: 0.8;
+    width: 530px;
+    display: none;
+    float: right;
+
+}
+
+
+tr{
+    padding-bottom: 8px;
+    display: block
+}
+
+a{
+    color: DarkBlue
+}
+
+.news_link {
+    opacity: 1;
+}
+
+
+.forecast{
+    display: none;
+    border: solid;
+    width: 300px;
+    text-align: center;
+}
+
+.forecast h1{
+    transform: translateY(-20px);
+}

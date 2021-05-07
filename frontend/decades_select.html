@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>  
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <!--Import Firebase libraries-->
+         <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-app.js"></script>
+         <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-auth.js"></script>
+         <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-database.js"></script>
+         <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-storage.js"></script>
+         <link rel="stylesheet" href="gameSelection.css" type="text/css">
+        <title>Choose Your Decade</title>
+    </head>
+    <body>
+        <form id="decade_button_form">
+            <button formaction="seventies.html" class = "decade_buttton" id = "seventies_decade_button">1970's</button>
+            <button formaction="eighties.html" class = "decade_buttton" id = "eighties_decade_button">1980's</button>
+            <button formaction="nineties.html" class = "decade_buttton" id = "nineties_decade_button">1990's</button>
+            <button formaction="aughts.html" class = "decade_buttton" id = "aughts_decade_button">2000's</button>
+            <button formaction="tens.html" class = "decade_buttton" id = "tens_decade_button">2010's</button>
+        </form>
+    </body>
+</html>

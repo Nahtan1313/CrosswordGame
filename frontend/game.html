@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Daily Crossword</title>
+        <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-database.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-storage.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+            // Your web app's Firebase configuration
+            // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+             const firebaseConfig = {
+                apiKey: "AIzaSyDYmz46x6-qXPAoK9iBMdyYQQXUJYpgTQ0",
+                authDomain: "daily-crossword-ec7e4.firebaseapp.com",
+                databaseURL: "https://daily-crossword-ec7e4-default-rtdb.firebaseio.com",
+                projectId: "daily-crossword-ec7e4",
+                storageBucket: "daily-crossword-ec7e4.appspot.com",
+                messagingSenderId: "509234491342",
+                appId: "1:509234491342:web:5c9591b2798dbda5dc459f",
+                measurementId: "G-P4Q7XJ3W1Z"
+            };
+            firebase.initializeApp(firebaseConfig);
+                //const db = firebase.database();
+        </script>
+        <script src = "./Crossword.js"></script>
+        <script  src="./CrosswordController.js"></script>
+        <script src="./CrosswordView.js"></script>
+        <link rel="stylesheet" href="crosswordStyle.css" type="text/css">
+    </head>
+    <body>
+        <script src="./link.js"></script>
+        <script>
+            let linker;
+            let queryString = location.search.substring(1);
+            let date;
+            if(queryString === "")
+            {
+                linker = new Linker(0, 0, 0);
+            }
+            else{
+                date = queryString.split("_");
+                linker = new Linker(date[0], date[1], date[2]);
+            }
+        </script>
+        <div id = "start_screen" class = "screen_freeze">
+            <h1>Press Here to Start</h1>
+            <button id = "start_button">Let's Go!</button>
+        </div>
+        <div id = "pause_screen" class = "screen_freeze">
+            <h1>Your Game Has Been Paused</h1>
+            <button id = "unpause_button">Resume</button>
+        </div>
+        <div id = "end_screen" class = "screen_freeze">
+            <button id = "exit_button">Exit</button>
+            <h1>Congratulations!!!</h1>
+            <h3>Your Score <span id = "display_score"></span></h3>
+            <h3>You completed the puzzle in <span id = "display_final_time"></span></h3>
+            <button>Back to Home</button>
+        </div>
+        <div class = "navigation_bar">
+            <!-- includes links to other pages here when i get to it --->
+            <div id = "check_button_div" class = "drop_down">
+                <button id = "check_button" class = "drop_button">Check</button>
+                <div id = "check_content" class = "dropdown_content">
+                    <button class = "check" id = "checkGrid">Check Grid</button>
+                    <button class = "check" id = "checkWord">Check Word</button>
+                    <button class = "check" id = "checkTile">Check Tile</button>
+                </div>
+            </div>
+            <div id = "reveal_button_div" class = "drop_down">
+                <button id = "reveal_button" class = "drop_button">Reveal</button>
+                <div id = "reveal_content" class = "dropdown_content">
+                    <button class = "reveal" id = "revealGrid">Reveal Grid</button>
+                    <button class = "reveal" id = "revealWord">Reveal Word</button>
+                    <button class = "reveal" id = "revealTile">Reveal Tile</button>
+                </div>
+            </div>
+            <button id = "clear_button" class = "clear">Clear</button>
+            <button id = "pause_button" class = "pause">Pause</button>
+            <span id = "clock">00:00</span>
+            <!--  <button id = "reset"></button> --->
+        </div>
+        <div id = "root">
+            <div  id = "clueDisplay_div">
+                <h1 id = "display_clue"></h2>
+            </div>
+        </div>
+    </body>
+</html>
