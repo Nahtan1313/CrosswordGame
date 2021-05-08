@@ -179,8 +179,6 @@ class Crossword{
         this.checked = false; 
         this.revealedTiles = [];  
         this.revealedWords = [];
-        this.userTime = 0;
-        this.targetTime = 0;
         this.completed = false;
         this.percentageDone = 0;
         // reset all arrays

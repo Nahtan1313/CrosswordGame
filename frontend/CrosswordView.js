@@ -401,17 +401,6 @@ class CrosswordView {
                 }
             }
         });
-        firebase.database().ref().child("users").child(userId).child("puzzles").child(date).child("time").once("value").then((snapshot) =>{
-            let  t = snapshot.val();
-            if(t != null){
-                _this.model.setElapsedTime(t);
-                _this.clockInterval = setInterval(function(){
-                    let stringTime = _this.model.elapsedTimeToString();
-                    $("#clock").html(stringTime);
-                },1000);
-            }
-        });
-
     }
 
     checkBoard(){
