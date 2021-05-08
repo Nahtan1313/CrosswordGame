@@ -30,19 +30,24 @@
         <title>Nathan's Crossword Site Home</title>
     </head>
     <body id = "home">
-        <h1>Hello</h1>
-        <form id = "home_naviagation">
+        <h1 class = "welcome_text">Welcome to Nathan's Bangin' Crossword Website<h1>
+        <form id = "home_navigation">
+            <p class = "form_text">Search for a puzzle by date</p>
             <button formaction="decades_select.html" class="home_btn" id="browse">Find a Game</button>
+            <p class = "form_text">Play a random puzzle</p>
             <button formaction="game.html" class="home_btn" id="random">Random</button>
+            <p class = "form_text">See your past games</p>
             <button formaction="savedGames.html" class="home_btn" id="my_games">Continue</button>
         </form>
         <table class = "newsFeed">
             <tr>
-                <th>Trending Stories</th>
+                <th id = "news_label">Trending News</th>
             </tr>
         </table>
         <div class = "forecast">
-            <h2>Today's Weather</h2>
+            <div class = "label">
+                <h1>Today's Weather</h1>
+            </div>
         </div>
     </body>
 </html>

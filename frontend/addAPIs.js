@@ -15,13 +15,13 @@
         let title;
         console.log(storiesArr);
         len = storiesArr.length;
-        for(let i = 0; i < len; i++)
+        for(let i = 0; i < (len/2)-2; i++)
         {
             id =storiesArr[i].asset_id;
             tr = $("<tr id = "+id+"></tr>");
             storyURL =  storiesArr[i].url;
             title = storiesArr[i].title;
-            link = $("<a  class = 'news_link' href = "+storyURL+" target='_blank'>"+title+"</a>");
+            link = $("<a  class = 'news_link' href = "+storyURL+" target='_blank'>*&nbsp;&nbsp;"+title+"</a>");
             tr.append(link);
             table.append(tr);
         }
@@ -68,7 +68,7 @@
         let root = $(".forecast")
         let data = weather.data[0];
         let currentW = data.WeatherText;
-        root.append("<h2 class = 'current_weather'>"+currentW+"<h2>");
+        root.append("<h3 class = 'current_weather'>"+currentW+"<h3>");
         let currentTemp = data.Temperature.Imperial.Value;
         root.append("<h2 class = 'current_temp'>"+currentTemp+"<span>&#176;</span> F<h2>");
         let icon;
@@ -84,47 +84,62 @@
         let moon = "fas fa-moon";
         let cloud_moon = "fas fa-cloud-moon";
         let rain_moon = "fas fa-cloud-moon-rain";
+        let color;
 
         if(!(data.IsDayTime)) //Night
         {
             if(weatherIcon === 33 ||  weatherIcon === 34 ||  weatherIcon === 35){
                 icon = moon;
+                color = "MidnightBlue";
             }
             else if(weatherIcon === 36 ||  weatherIcon === 37 ||  weatherIcon === 38){
                 icon = cloud_moon;
+                color = "MidnightBlue";
             }
             else if(weatherIcon === 39 ||  weatherIcon === 40){
                 icon = rain_moon;
+                color = "MidnightBlue";
             }
             else if(weatherIcon === 41 ||  weatherIcon === 42){
                 icon = lightning;
+                color = "Yellow";
             }
-            if(weatherIcon === 43 ||  weatherIcon === 44){
+            else if(weatherIcon === 43 ||  weatherIcon === 44){
                 icon = snow;
+                color = "Azure";
             }   
         }
         else{
             if(weatherIcon === 1 ||  weatherIcon === 2 ||  weatherIcon === 3 || weatherIcon === 4){
                 icon = sun;
+                color = "Gold";
             }
             else if(weatherIcon === 5 ||  weatherIcon === 6 ||  weatherIcon === 7 ||  weatherIcon === 8 ||  weatherIcon === 11){
                 icon = cloud_sun;
+                color = "OldLace";
             }
             else if(weatherIcon === 13 ||  weatherIcon === 14){
                 icon = rain_sun;
+                color = "LightCyan";
             }
             else if(weatherIcon === 16 ||  weatherIcon === 17 ){
                 icon = lightning;
+                color = "Yellow";
             }
             else if(weatherIcon === 18 ||  weatherIcon === 12){
                 icon = rain;
+                color = "LightBlue";
+
             }
             else if(weatherIcon >= 19 && weatherIcon <= 29){
                 icon = snow;
+                color = "Azure";
             } 
         }
-        image = $("<i id = 'weather_icon' class = '"+icon+"'></i>");
-        root.append(image);
+        let colorDiv = $("<span style = color:"+color+"><span>");
+        image = $("<i "+color +" id = 'weather_icon' class = '"+icon+" fa-4x'></i>");
+        colorDiv.append(image);
+        root.append(colorDiv);
         root.css("display", "block")
     }
 

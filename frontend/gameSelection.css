@@ -1,3 +1,5 @@
+
+
 #years_div{
     display: block;
 }
@@ -9,7 +11,6 @@
 }
 
 .day_reference{
-    margin: 20px;
     border: black;
 }
 
@@ -111,3 +112,49 @@ body{
     background-image: url(./images/tens_image.jpeg);
     color: black;
 }
+
+.column h2{
+    text-align: left;
+    transform: translate(0px, 35px);
+    margin: 0px;
+    vertical-align:middle;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.column{
+    height: 99px;
+    width: 100%;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+#monday{
+    background-color: rgb(148, 250, 127);
+}
+
+#tuesday{
+    background-color: rgb(213, 250, 127);
+    
+}
+#wednesday{
+    background-color: rgb(242, 250, 127);
+}
+
+#thursday{
+    background-color: rgb(250, 227, 127);
+}
+
+#friday{
+    background-color: rgb(250, 201, 127);
+}
+#saturday{
+    background-color: rgb(250, 152, 127);
+}
+#sunday{
+    background-color: rgb(250, 227, 127);
+}
+
+
+
+

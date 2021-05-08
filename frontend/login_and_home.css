@@ -1,5 +1,3 @@
-#home{
-}
 
 
 #login{
@@ -34,23 +32,31 @@
 }
 
 .newsFeed{
-    background-color: lightgray;
-    color: white;
+    color: black;
     opacity: 0.8;
-    width: 530px;
+    width: 460px;
     display: none;
-    float: right;
+    position: absolute;
+    transform: translate(900px, -560px);
 
 }
 
+.newsFeed th{
+    font-size: x-large;
+    text-align: center;
+    padding-left: 15px;
+}
 
-tr{
-    padding-bottom: 8px;
-    display: block
+
+.newsFeed tr{
+    width: 600px;
+    display: block;
 }
 
 a{
-    color: DarkBlue
+    color: DarkBlue;
+    text-decoration: none;
+    font-size: medium;
 }
 
 .news_link {
@@ -59,12 +65,67 @@ a{
 
 
 .forecast{
+    position: absolute;
     display: none;
     border: solid;
     width: 300px;
     text-align: center;
+    border-collapse: collapse;
+    transform: translate(1000px, -210px);
+    float: right;
+    height: 330px;
 }
 
 .forecast h1{
-    transform: translateY(-20px);
+    transform: translateY(-17px);
+}
+
+.label{
+    border-style: none none solid none;
+    height: 28px;
+}
+
+.label h1{
+    font-size: xx-large;
+}
+
+.current_weather{
+    transform: translateY(-50px);
+    font-weight: lighter;
+    font-style: italic;
+    font-size: large;
+}
+
+.current_city{
+    transform: translateY(-17px);
+    font-weight: lighter;
+    font-size: x-large;
+}
+
+.current_temp{
+    transform: translateY(90px);
+    font-weight: lighter;
+    font-size: xx-large;
+}
+
+#weather_icon{
+    transform: translateY(-140px);
+}
+
+#home_navigation p{
+    width: 500px;
+    margin-left: 14%;
+    text-align: center;
+}
+
+#home_navigation button{
+    width: 300px;
+    height: 70px;
+    margin-left: 21%;
+}
+
+.welcome_text{
+    width: 700px;
+    margin-left: 8%;
+    text-align: center;
 }
