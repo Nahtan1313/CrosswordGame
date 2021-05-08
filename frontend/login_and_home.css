@@ -10,7 +10,7 @@
 }
 
 #firebaseui-auth-container{
-    transform: translateY(332px);
+    transform: translateY(285px);
 }
 
 
@@ -21,7 +21,7 @@
 }
 
 .intro_text{
-    transform: translate(490px, 200px);
+    transform: translate(490px, 150px);
     font-size: 70px;
     color: rgb(131, 95, 165);
     position: fixed;

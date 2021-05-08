@@ -76,8 +76,7 @@ createMonths = function(y){
 }
 
 createDays = function(year, month){
-    let leapYears = [1976, 1980, 1984,1988,1992,1996,2000,2004, 2008,2012]
-    console.log(year, month)
+    let leapYears = [1976, 1980, 1984,1988,1992,1996,2000,2004, 2008,2012];
     let start;
     let end;
     if(month === 2){
@@ -118,7 +117,7 @@ createDays = function(year, month){
     let DayOfWeek;
     let dowDiv;
     let first = "first";
-    let stringDOWs = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"];
+    let stringDOWs = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
     for(let d = start; d <= end; d++){
         date = new Date(year, month-1, d)
         dow = date.getUTCDay();

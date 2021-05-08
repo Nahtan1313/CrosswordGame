@@ -23,7 +23,6 @@ renderList = function(userId){
     dbRef.child("users").child(userId).child("puzzles").once("value").then((snapshot) =>{
         let puzzles = snapshot.val();
         let props = Object.keys(puzzles);
-        console.log(puzzles[props[0]]);
         let len = props.length
         let tr;
         let p;

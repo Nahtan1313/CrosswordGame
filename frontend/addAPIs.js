@@ -13,7 +13,6 @@
         let table = $(".newsFeed")
         let storyURL;
         let title;
-        console.log(storiesArr);
         len = storiesArr.length;
         for(let i = 0; i < (len/2)-2; i++)
         {
@@ -43,14 +42,10 @@
     initiateWeatherAPI = function(locationJSON){
         let root = $(".forecast")
         let location_parts = locationJSON.results[0].components;
-        console.log(location_parts)
         let myTown = location_parts.town;
         let myState = location_parts.state_code;
         let myCountry = location_parts["ISO_3166-1_alpha-2"];
         root.append("<h2 class = 'current_city'>"+myTown+"<h2>");
-        console.log(myTown);
-        console.log(myState);
-        console.log(myCountry);
         let locationLink = "https://dataservice.accuweather.com/locations/v1/cities/"+myCountry+"/"+myState+"/search?apikey=jZKnL8MZP57vbiskVr3O40DiJmvsXC5n&q="+myTown;
         let weatherLink = "https://dataservice.accuweather.com/forecasts/v1/daily/1day/";
         axios.get(locationLink).then(
@@ -144,7 +139,6 @@
     }
 
     renderForecast = function(weather){
-        console.log(weather.data.DailyForecasts[0]);
         let day = weather.data.DailyForecasts[0].Day;
         let night = weather.data.DailyForecasts[0].Night;
         let temperature = weather.data.DailyForecasts[0].Temperature;

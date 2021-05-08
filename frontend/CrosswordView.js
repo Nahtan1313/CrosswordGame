@@ -9,8 +9,9 @@ class CrosswordView {
         this.currentlyAcross = true; //true if across, false if down
         this.buttonListeners = [];
         this.board = this.model.getCurrentBoard();
-        this.clockInterval;
         this.database = firebase.database();
+        this.downloadBoard();
+        this.clockInterval;
         // creating the board itself with the dark spaces and numbers
         this.crossword_board = document.createElement('table');
             this.crossword_board.id = "board";
@@ -18,8 +19,6 @@ class CrosswordView {
         this.initialize();
     }
     initialize(){
-        this.downloadBoard();
-        this.sendToDatabase(true)
         this.resetCurrentBoard();
         for(let r = 0; r < this.model.numrows; r++){
             let trow = document.createElement('tr');
@@ -78,6 +77,7 @@ class CrosswordView {
                             $("#textArea"+r+"_"+c).val("");
                             setTimeout(slowTransition, 2, nextUp);
                         }
+                        $("#textArea"+r+"_"+c).removeClass("incorrect");
                         _this.sendToDatabase(false);
                     }
                     else{
@@ -217,6 +217,7 @@ class CrosswordView {
         });
         document.getElementById("start_button").addEventListener("click", function(){
             $("#root").css({"opacity": "1","pointer-events":"auto"});
+            _this.sendToDatabase(true);
             $(".navigation_bar").css({"opacity": "1","pointer-events":"auto"});
             $("#start_screen").css("display", "none");
             _this.model.startTime();
@@ -257,13 +258,15 @@ class CrosswordView {
             for(let c = 0; c < this.model.numcols; c++){
                 let cell_val = this.model.getCurrentBoard()[r][c];
                 let truth_val = this.model.getCheckedBoard()[r][c];
-                if(cell_val != "_" || !truth_val)
+                if(cell_val != "_" || !truth_val || cell_val != " ")
                 {
                     $("#textArea"+r+"_"+c).html(this.model.getCurrentBoard()[r][c]);
                 }
             }
         }
     }
+
+
 
     resetCurrentBoard(){
         for(let r = 0; r < this.model.numrows; r++){
@@ -383,11 +386,32 @@ class CrosswordView {
         firebase.database().ref().child("users").child(userId).child("puzzles").child(date).child("board").once("value").then((snapshot) =>{
             let  b = snapshot.val();
             if(b != null){
-                console.log(b);
                 _this.board = b;
                 _this.model.setCurrentBoard(b);
+                for(let r = 0; r < this.model.numrows; r++){
+                    for(let c = 0; c < this.model.numcols; c++){
+                        let cell_val = _this.board[r][c];
+                        if(cell_val === " " || cell_val === "_"){
+                            $("#textArea"+r+"_"+c).html("");
+                        }
+                        else{
+                            $("#textArea"+r+"_"+c).html(_this.board[r][c]);
+                        }
+                    }
+                }
             }
         });
+        firebase.database().ref().child("users").child(userId).child("puzzles").child(date).child("time").once("value").then((snapshot) =>{
+            let  t = snapshot.val();
+            if(t != null){
+                _this.model.setElapsedTime(t);
+                _this.clockInterval = setInterval(function(){
+                    let stringTime = _this.model.elapsedTimeToString();
+                    $("#clock").html(stringTime);
+                },1000);
+            }
+        });
+
     }
 
     checkBoard(){

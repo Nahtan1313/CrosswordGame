@@ -556,6 +556,20 @@ class Crossword{
         return this.elapsed;
     }
 
+    setElapsedTime(time){
+        let myTime = time.split(":");
+        let seconds;
+        let minutes;
+        if(myTime[0] != null){
+            minutes = parseInt(myTime[0]);
+        }
+        if(myTime[1] != null){
+            seconds = parseInt(myTime[1]);
+        }
+        this.start_time = Date.now() - (seconds*1000) + (minutes*60*1000)
+        this.totalPauseTime = 0;
+    }
+
     startTime(){
         this.start_time = Date.now();
     }
@@ -629,9 +643,13 @@ class Crossword{
         if(currentBoardState != null){
             this.puzzleBoard = currentBoardState;
         }
-        let filledTiles = this.puzzleBoard.filter(x => x != "_");
+        let filledTiles = 0;
+        for(let r = 0; r < this.numrows; r++){
+            filledTiles += (this.puzzleBoard[r].filter(x => (x != "_" && x != " " && x != "*"))).length;
+        }
         let totalTiles = this.numrows*this.numcols;
-        return Math.round((filledTiles.length/totalTiles)*100);
+        this.percentageDone = Math.round((filledTiles/totalTiles)*100);
+        return this.percentageDone
     }
 
 
@@ -654,7 +672,6 @@ class Crossword{
             }
             if(this.revealed){
                 let scoreCalc = this.score - 10*this.revealedWords.length; // no points for revealing whole word
-                console.log(this.revealedWords);
                 let wordTileRevealCount = this.revealedWords.reduce(function(accumulator, currentVal){
                     return accumulator += currentVal.length;
                 });
