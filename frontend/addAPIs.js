@@ -116,7 +116,7 @@
             }
             else if(weatherIcon === 5 ||  weatherIcon === 6 ||  weatherIcon === 7 ||  weatherIcon === 8 ||  weatherIcon === 11){
                 icon = cloud_sun;
-                color = "OldLace";
+                color = "lightgray";
             }
             else if(weatherIcon === 13 ||  weatherIcon === 14){
                 icon = rain_sun;
