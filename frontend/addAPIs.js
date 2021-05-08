@@ -51,14 +51,14 @@
         console.log(myTown);
         console.log(myState);
         console.log(myCountry);
-        let locationLink = "http://dataservice.accuweather.com/locations/v1/cities/"+myCountry+"/"+myState+"/search?apikey=jZKnL8MZP57vbiskVr3O40DiJmvsXC5n&q="+myTown;
-        let weatherLink = "http://dataservice.accuweather.com/forecasts/v1/daily/1day/";
+        let locationLink = "https://dataservice.accuweather.com/locations/v1/cities/"+myCountry+"/"+myState+"/search?apikey=jZKnL8MZP57vbiskVr3O40DiJmvsXC5n&q="+myTown;
+        let weatherLink = "https://dataservice.accuweather.com/forecasts/v1/daily/1day/";
         axios.get(locationLink).then(
             dat => {
-            axios.get("http://dataservice.accuweather.com/currentconditions/v1/"+dat.data[0].Key+"?apikey=jZKnL8MZP57vbiskVr3O40DiJmvsXC5n").then(
+            axios.get("https://dataservice.accuweather.com/currentconditions/v1/"+dat.data[0].Key+"?apikey=jZKnL8MZP57vbiskVr3O40DiJmvsXC5n").then(
                 weather => renderCurrentWeather(weather)
             )
-            axios.get("http://dataservice.accuweather.com/forecasts/v1/daily/1day/"+dat.data[0].Key+"?apikey=jZKnL8MZP57vbiskVr3O40DiJmvsXC5n").then(
+            axios.get("https://dataservice.accuweather.com/forecasts/v1/daily/1day/"+dat.data[0].Key+"?apikey=jZKnL8MZP57vbiskVr3O40DiJmvsXC5n").then(
                 weather => renderForecast(weather)
             )
         }).catch(err => console.log(err));
